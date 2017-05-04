@@ -23,5 +23,8 @@
     "example-app-angular-cli",
     "example-app-webpack"
   ],
-  "angularCompilerOptions": { "strictMetadataEmit": true }
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "genDir": "compiled"
+  }
 }

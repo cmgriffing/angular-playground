@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import {Location, LocationStrategy, PathLocationStrategy, CommonModule} from '@angular/common';
 import {ScenarioComponent} from './scenario/scenario.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -16,7 +16,8 @@ const PLAYGROUND_SUPPORT_MODULES = require('sandboxes').PLAYGROUND_SUPPORT_MODUL
 
 let imports = [
   BrowserModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  CommonModule,
 ];
 if(PLAYGROUND_SUPPORT_MODULES.length > 0) {
   imports = [
@@ -26,7 +27,10 @@ if(PLAYGROUND_SUPPORT_MODULES.length > 0) {
 }
 
 @NgModule({
-  imports,
+  imports: [
+    ...imports,
+    CommonModule
+  ],
   providers: [
     Location,
     {provide: LocationStrategy, useClass: PathLocationStrategy},
