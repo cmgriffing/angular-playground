@@ -22,5 +22,6 @@
     "node_modules",
     "example-app-angular-cli",
     "example-app-webpack"
-  ]
+  ],
+  "angularCompilerOptions": { "strictMetadataEmit": true }
 }
