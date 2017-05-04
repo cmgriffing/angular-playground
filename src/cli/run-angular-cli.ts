@@ -14,11 +14,14 @@ export const runAngularCli = (angularCliConfig) => {
   let args = [cliPath, 'serve', '-no-progress'];
   args.push('--port');
   args.push(port.toString());
+  if(angularCliConfig.prod === true) {
+    args.push('--prod');
+  }
   if (angularCliConfig.appName) {
     args.push(`-a=${angularCliConfig.appName}`);
   }
   if (angularCliConfig.environment) {
-    args.push(`-e=${angularCliConfig.environment}`);
+    args.push(`--env=${angularCliConfig.environment}`);
   }
   if (angularCliConfig.args) {
     args = args.concat(angularCliConfig.args);
