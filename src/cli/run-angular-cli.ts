@@ -8,7 +8,7 @@ export const runAngularCli = (angularCliConfig) => {
   try{
     fs.accessSync(path.resolve('node_modules/@angular/cli/bin/ng'));
   } catch (e) {
-    cliName = 'angular-cl';
+    cliName = 'angular-cli';
   }
   let cliPath = `node_modules/${cliName}/bin/ng`;
   let args = [cliPath, 'serve', '-no-progress'];
